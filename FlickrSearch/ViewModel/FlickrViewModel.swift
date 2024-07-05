@@ -8,30 +8,32 @@
 import Foundation
 import Combine
 
+import Foundation
+import Combine
+
 class FlickrViewModel: ObservableObject {
     @Published var photos: [FlickrPhoto] = []
     @Published var isLoading = false
     private var cancellable: AnyCancellable?
+    private let flickrService: FlickrServiceProtocol
     
+    init(flickrService: FlickrServiceProtocol = FlickrService()) {
+        self.flickrService = flickrService
+    }
+    
+   
     func fetchPhotos(tags: String) {
-        guard !tags.isEmpty else {
-            photos = []
-            return
-        }
+        isLoading = true 
         
-        let urlString = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=\(tags)"
-        guard let url = URL(string: urlString) else { return }
-        
-        isLoading = true
-        
-        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: FlickrResponse.self, decoder: JSONDecoder())
-            .replaceError(with: FlickrResponse(items: []))
+        cancellable = flickrService.fetchPhotos(tags: tags)
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] in
-                self?.photos = $0.items
+            .sink(receiveCompletion: { [weak self] completion in
+                if case .failure(let error) = completion {
+                    print("Error fetching photos: \(error.localizedDescription)")
+                }
                 self?.isLoading = false
-            }
+            }, receiveValue: { [weak self] response in
+                self?.photos = response.items
+            })
     }
 }

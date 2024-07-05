@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1A648D2C381DD9008F0514 /* MockFlickrSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A648C2C381DD9008F0514 /* MockFlickrSearchService.swift */; };
+		2B1A648F2C381E54008F0514 /* FlickrServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A648E2C381E54008F0514 /* FlickrServiceProtocol.swift */; };
 		2B69F5252C35C859002324FF /* FlickrSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69F5242C35C859002324FF /* FlickrSearchApp.swift */; };
 		2B69F5272C35C859002324FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B69F5262C35C859002324FF /* ContentView.swift */; };
 		2B69F5292C35C85B002324FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B69F5282C35C85B002324FF /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B1A648C2C381DD9008F0514 /* MockFlickrSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlickrSearchService.swift; sourceTree = "<group>"; };
+		2B1A648E2C381E54008F0514 /* FlickrServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrServiceProtocol.swift; sourceTree = "<group>"; };
 		2B69F5212C35C859002324FF /* FlickrSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B69F5242C35C859002324FF /* FlickrSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchApp.swift; sourceTree = "<group>"; };
 		2B69F5262C35C859002324FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B1A648B2C381D2D008F0514 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2B1A648C2C381DD9008F0514 /* MockFlickrSearchService.swift */,
+				2B1A648E2C381E54008F0514 /* FlickrServiceProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		2B69F5182C35C859002324FF = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +111,7 @@
 		2B69F5232C35C859002324FF /* FlickrSearch */ = {
 			isa = PBXGroup;
 			children = (
+				2B1A648B2C381D2D008F0514 /* Services */,
 				2B69F54E2C35C907002324FF /* Models */,
 				2B69F5512C35C98F002324FF /* ViewModel */,
 				2B69F5542C35D2F9002324FF /* Views */,
@@ -287,7 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1A648D2C381DD9008F0514 /* MockFlickrSearchService.swift in Sources */,
 				2B69F5272C35C859002324FF /* ContentView.swift in Sources */,
+				2B1A648F2C381E54008F0514 /* FlickrServiceProtocol.swift in Sources */,
 				2B69F5502C35C96E002324FF /* FlickrPhoto.swift in Sources */,
 				2B69F5252C35C859002324FF /* FlickrSearchApp.swift in Sources */,
 				2B69F5532C35C9BD002324FF /* FlickrViewModel.swift in Sources */,
@@ -462,6 +478,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,6 +508,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
